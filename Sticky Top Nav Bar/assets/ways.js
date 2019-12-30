@@ -4,6 +4,7 @@ var heightToNavBar = 0;
 var navBarElement = null;
 
 var navBarTitles = [];
+var sideMenuTitles = [];
 
 var screenWidth = window.screen.width;
 var screenHeight = window.screen.height;
@@ -39,7 +40,6 @@ window.onscroll = e => {
     if (sideNavBarOpen) {
         toggleMenuClickEvent();
     }
-
 
 }
 
@@ -130,6 +130,14 @@ function showActiveTitlesOnNavBar(currentPosition) {
             elem.classList.remove("navbar-title-active");
         }
     });
+    
+    Array.from(sideMenuTitles).map(function (elem, i) {
+        if (i == finallyPassedSectionIndex) {
+            elem.classList.add("sideNav-item-active");
+        } else {
+            elem.classList.remove("sideNav-item-active");
+        }
+    });
 }
 
 function getSectionsData() {
@@ -146,7 +154,7 @@ function addClickFunctionsToNavTitles() {
     Array.from(navBarTitles).map(function (elem, index) {
 
         //create the side nav bar title
-        var sideNavItem = '<div class="sideNav-item" id="sideNav-item-' + index + '" onclick="sideNavItemClickEvent(' + index + ')">' + elem.innerText + '</div>';
+        var sideNavItem = '<div class="sideNav-item" id="sideNav-item-' + index + '" onclick="sideNavItemClickEvent(this.id)">' + elem.innerText + '</div>';
 
         sideNavBar.innerHTML += sideNavItem;
         //create the side nav bar titles
@@ -156,11 +164,14 @@ function addClickFunctionsToNavTitles() {
         elem.addEventListener("click", navItemClickEvent);
         //add id an event listner to top navigation menu
     });
+    
+    sideMenuTitles = document.getElementsByClassName("sideNav-item");
 
 }
 
 
-function sideNavItemClickEvent(index) {
+function sideNavItemClickEvent(id) {
+    var index = id.replace("sideNav-item-", "");
     console.log("side nav item clicked. " + index);
     displayToSection(index);
 }
