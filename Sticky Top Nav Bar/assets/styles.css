@@ -1,0 +1,134 @@
+html{
+    overflow-x:hidden;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/*cover styles*/
+.cover-page {
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+    background-color: aqua;
+}
+
+.cover-content{
+     text-align: center;
+    width: 100vw;
+    background-color:
+        transparent;
+    color: black;
+}
+/*cover styles*/
+
+.navbar{
+	height: 7vh;
+	width: 108vw;
+	padding-right: 10vw;
+	background-color: green;
+	z-index:3;
+}
+
+.navbar-title{
+	color:white;
+	cursor: pointer;
+	text-align:center;
+	display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+	transition: border-bottom 0.3s ease-out;
+    font-size: 2.3vh;
+}
+
+.navbar-title-holder{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+
+.navbar-fixed{
+	position: fixed;
+	top:1%;
+}
+
+.navbar-title:hover,
+.navbar-title-active
+{
+	border-bottom:2px solid yellow;
+}
+
+.toggleNavIconHolder {
+    cursor: pointer;
+    -webkit-text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+    position: relative;
+    transition: left 0.9s ease-out;
+    text-align: right;
+    width: 100%;
+}
+
+.sideNavBar{
+    height: 100vh;
+    width: 40%;
+    background-color: green;
+    z-index: 4;
+    position: absolute;
+    transition: right 0.3s ease-out;
+    right: 100%;
+    top: 30%;
+    padding-top: 4%;
+}
+
+.sideNavBar-active{ 
+    right: 60%;
+}
+
+.sideNav-item{
+    color: white;
+    font-size: 2.3vh;
+    padding: 3%;
+    cursor: pointer;
+    border-bottom: 1px solid lightgray;
+}
+
+.sideNav-item:hover{
+    color: white;
+}
+
+
+/*sections styles*/
+.section{
+    height: 100vh;
+    width: 100vw;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+	padding:7% 2% 2% 2%;
+}
+
+.section-content{
+    width: 100vw;
+	height: 100%;
+    text-align: center;
+    color: black;
+    font-size: 5em;
+}
