@@ -1,0 +1,168 @@
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.scrollDownArrow {
+    height: 7vh;
+    position: relative;
+    -webkit-animation: mymove 1.5s infinite;
+    /* Safari 4.0 - 8.0 */
+    animation: mymove 1.5s infinite;
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    0% {
+        top: -45px;
+        opacity: 0;
+    }
+    
+    25%{
+        top: -25px;
+        opacity: 0.5;
+    }
+
+    50% {
+        top: 0px;
+        opacity: 1;
+    }
+    
+    25%{
+        top: -25px;
+        opacity: 0;
+    }
+
+    100% {
+        top: -45px;
+        opacity: 0;
+    }
+}
+
+/* Standard syntax */
+@keyframes mymove {
+   0% {
+        top: -45px;
+        opacity: 0;
+    }
+    
+    25%{
+        top: -25px;
+        opacity: 0.5;
+    }
+
+    50% {
+        top: 0px;
+        opacity: 1;
+    }
+    
+    25%{
+        top: -25px;
+        opacity: 0;
+    }
+
+    100% {
+        top: -45px;
+        opacity: 0;
+    }
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+
+.coverImage {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("images/eminemShow.jpg");
+    color: white;
+    z-index: 1;
+}
+
+.secondImage {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("images/eminemCap.jpg");
+    z-index: 1;
+}
+
+.thirdImage {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("images/eminemVictory.jpg");
+    z-index: 1;
+}
+
+
+/*content*/
+.content {
+    width: 100vw;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2%;
+    z-index: 3;
+
+    /*
+    opacity: 0.5;
+    filter: Alpha(opacity=50);
+*/
+}
+
+.linkButton {
+    border-radius: 29px;
+    background-color: grey;
+    padding: 0.5% 1% 0.5% 1%;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 10%;
+    margin: auto;
+    text-align: center;
+    background-image: linear-gradient(to right, darkslategrey, gray);
+}
+
+.welcomeTitle {
+    color: black;
+    font-size: 6vh;
+    text-align: center;
+    font-family: 'Montserrat';
+    padding: 0% 0% 1% 0%;
+    font-weight: 400;
+
+}
+
+.subtitle {
+    font-size: 2.6vh;
+    color: darkslategrey;
+    padding: 0% 4% 1% 2%;
+    font-family: 'Assistant';
+    text-align: start;
+    font-weight: 600;
+}
+
+.contentTitle {
+    color: black;
+    font-size: 5vh;
+    text-align: center;
+    font-family: 'Assistant';
+    padding: 0% 0% 1% 0%;
+}
+
+.contentText {
+    font-size: 2.4vh;
+    text-align: center;
+    color: darkslategrey;
+    padding: 0% 4% 1% 2%;
+    font-family: 'Assistant';
+
+}
