@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Parallax Scrolling</title>
+    <title>Note pad</title>
 
     <!-- Bootstrap & Snippet plugin core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -27,27 +27,24 @@
 <body>
 
     <div class="canvas">
-        <div class="addNewCardBtn" onclick="displayAddNewForm()">
+        <div class="addNewCardBtn" onclick="displayAddNewForm()" id="addNewBtn">
             + Add New
         </div>
-
-        <div class="addNewForm">
-
-            <input placeholder="Enter card title" class="titleInput" />
-            <textarea rows="5" placeholder="Enter content here" class="contentInput"></textarea>
-
-
+        
+        <div class="howToDragBtn" onclick="displayHowToIns()">
+            How to drag
+        </div>
+        
+        <div class="instructionCard">
+            First click the card you want to move and then click again and drag to where ever you want!
         </div>
 
+        <form class="addNewForm">
+            <input placeholder="Enter card title" class="titleInput" required />
+            <textarea rows="5" placeholder="Enter content here" class="contentInput" required></textarea>
 
-        <div class="noteCard">
-            <div class="noteCardHeader" id="card1">
-                This is the title
-            </div>
-            <div class="noteCardBody">
-                this is the content of my first note card
-            </div>
-        </div>
+            <Button class="saveButton" type="submit" onclick="saveCard()">SAVE</Button>
+        </form>
 
 
     </div>

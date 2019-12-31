@@ -6,10 +6,25 @@ body {
     overflow: hidden;
 }
 
+/*change place holder colors*/
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+/*change place holder colors*/
 
 .canvas {
     height: 100vh;
     width: 100vw;
+    position: fixed;
     background-image: url("images/tableBack.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -17,6 +32,34 @@ body {
     background-size: cover;
 }
 
+.howToDragBtn {
+    border: 1.5px solid white;
+    border-radius: 20px;
+    padding: 0.5% 0.7% 0.5% 0.7%;
+    color: white;
+    width: 20%;
+    float: left;
+    text-align: center;
+    margin: 2% 1% 0% 2%;
+    cursor: pointer;
+    position: absolute;
+    top: 87vh;
+}
+
+.instructionCard{
+    width: 35%;
+    font-size: 13px;
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    font-family: "Montserrat";
+    padding: 1%;
+    position: absolute;
+    top: 77%;
+    right: 100vw;
+    margin: 0% 1% 0% 2%;
+    transition: right 1s ease-in;
+}
 
 /*note card */
 .noteCard {
@@ -92,12 +135,12 @@ body {
 .addNewForm {
     float: right;
     width: 26vw;
-    height: 40vh;
+    height: 50vh;
     background-color: transparent;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 0.5%;
     transition: display 1s ease-out;
-    border: 1px solid darkgray;
+    border: 1.5px solid white;
     -webkit-text-align: center;
     display: -webkit-flex;
     display: flex;
@@ -113,12 +156,16 @@ body {
 
 .titleInput {
     width: 100%;
-    height: 15%;
+    height: 13%;
     margin-bottom: 1.5%;
     border-radius: 5px;
     padding-left: 3%;
-    background-color: whitesmoke;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
 }
+
+
 
 .titleInput:focus {
     outline: none;
@@ -126,12 +173,26 @@ body {
 
 .contentInput {
     width: 100%;
-    height: 82%;
+    height: 70%;
     padding: 2%;
     border-radius: 8px;
-    background-color: whitesmoke;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
 }
 
 .contentInput:focus {
     outline: none;
+}
+
+.saveButton {
+    background-color: transparent;
+    padding: 0.8% 2% 0.8% 2%;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    margin: 2% auto 2.2% auto;
+    text-align: center;
+/*    background-image: linear-gradient(to right, darkblue, blue);*/
 }
