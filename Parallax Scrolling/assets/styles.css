@@ -33,7 +33,7 @@ body {
         opacity: 1;
     }
     
-    25%{
+    75%{
         top: -25px;
         opacity: 0;
     }
@@ -61,7 +61,7 @@ body {
         opacity: 1;
     }
     
-    25%{
+    75%{
         top: -25px;
         opacity: 0;
     }

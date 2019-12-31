@@ -1,0 +1,137 @@
+html {
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+.canvas {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("images/tableBack.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*note card */
+.noteCard {
+    position: absolute;
+    z-index: 9;
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+    min-height: 10vh;
+    min-width: 17vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.noteCardHeader {
+    background-color: whitesmoke;
+    border-bottom: 1px solid lightgray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 2%;
+}
+
+.noteCardBody {
+    padding: 2%;
+    font-family: "Assistant";
+    text-align: justify;
+}
+
+/*note card*/
+
+/*add new card*/
+.addNewCardBtn {
+    border: 1.5px solid white;
+    border-radius: 20px;
+    padding: 0.5% 0.7% 0.5% 0.7%;
+    color: white;
+    width: 12vw;
+    float: right;
+    text-align: center;
+    margin: 2% 1% 0% 0%;
+    cursor: pointer;
+}
+
+.addNewCardBtn:hover {
+    -webkit-animation: shadeButtonAnim 1s ease-in;
+    /* Safari 4.0 - 8.0 */
+    animation: shadeButtonAnim 1s ease-in;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes shadeButtonAnim {
+    0% {
+        background-color: whitesmoke;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Standard syntax */
+@keyframes shadeButtonAnim {
+    0% {
+        background-color: whitesmoke;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.addNewForm {
+    float: right;
+    width: 26vw;
+    height: 40vh;
+    background-color: transparent;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5%;
+    transition: display 1s ease-out;
+    border: 1px solid darkgray;
+    -webkit-text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
+    position: absolute;
+    left: 100vw;
+    top: 15vh;
+    transition: left 0.7s ease-out;
+}
+
+.titleInput {
+    width: 100%;
+    height: 15%;
+    margin-bottom: 1.5%;
+    border-radius: 5px;
+    padding-left: 3%;
+    background-color: whitesmoke;
+}
+
+.titleInput:focus {
+    outline: none;
+}
+
+.contentInput {
+    width: 100%;
+    height: 82%;
+    padding: 2%;
+    border-radius: 8px;
+    background-color: whitesmoke;
+}
+
+.contentInput:focus {
+    outline: none;
+}
