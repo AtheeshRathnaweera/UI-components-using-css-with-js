@@ -53,7 +53,7 @@ function dragElement(elmnt) {
 
 
     function elementDrag(e) {
-        e = e || window.event;
+        e = e || window.event; // set default value to e if it is undefined
         e.preventDefault();
         // calculate the new cursor position:
         pos1 = pos3 - e.clientX;
