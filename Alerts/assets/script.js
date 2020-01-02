@@ -1,21 +1,18 @@
 $(document).ready(function () {
     console.log("ready started");
-    notification("Hello world.","darkblue","white","top-right");
-    //notification(message,backgroundColor,fontColor,position);
 });
 
 
-document.getElementById("leftLaunch").onclick = function () {
-    var notificationelement = document.getElementsByClassName("notification")[0];
+document.getElementById("bottomRightLaunch").onclick = function () {
+    notification("Bottom left notification.","darkblue","white","bottom-right");
+}
 
-    notificationelement.style.display = "block";
+document.getElementById("centerRightLaunch").onclick = function () {
+    notification("Center right notification.","darkblue","white","center-right");
+}
 
-    notificationelement.style.right = "77vw";
-
-    setTimeout(function () {
-        console.log("timr up");
-        notificationelement.style.right = "100vw";
-    }, 3000);
+document.getElementById("topRightLaunch").onclick = function(){
+     notification("Top right notification.","darkgreen","white","top-right");
 }
 
 function getStylesNameForPosition(recPosition) {

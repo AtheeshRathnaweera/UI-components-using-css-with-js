@@ -54,132 +54,791 @@ body {
 /*button styles*/
 
 /*notification styles*/
-.notification {
-    font-family: "Assistant";
-    color: white;
-    padding: 1.3%;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-    width: 20%;
-    position: absolute;
-    transition: right 1s ease-out;
-    margin: 2vw;
-    z-index: 7;
-    
-}
 
-/*animation key frames for right to left*/
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes rightToLeft {
-    0% {
-        right: -30vw;
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 500px) {
+    .notification {
+        font-family: "Assistant";
+        color: white;
+        padding: 1.3%;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 45%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
     }
 
-    
-    25%{
-        right: 0vw;
-    }
-
-
-    50% {
-        right: 0vw;
-    }
-
-    
-    75%{
-        right: -30vw;
-    }
-
-
-    100% {
-        right: -40vw;
-    }
-}
-
-/* Standard syntax */
-@keyframes rightToLeft {
-    0% {
-        right: -30vw;
-    }
-
-    
-    25%{
-        right: 0vw;
-    }
-
-
-    50% {
-        right: 0vw;
-    }
-
-    
-    75%{
-        right: -30vw;
-    }
-
-
-    100% {
-        right: -40vw;
-    }
-}
-/*animation key frames for right to left*/
-
-/*animation key frames for left to right*/
-@-webkit-keyframes leftToRight{
-    0% {
-        right: 120vw;
-    }
-
-    
-    25%{
-        right: 75vw;
-    }
-
-
-    50% {
-        right: 75vw;
-    }
-
-    
-    75%{
-        right: 120vw;
-    }
-
-
-    100% {
+    .noti-top-left {
+        top: 8%;
         right: 130vw;
     }
-}
 
-/* Standard syntax */
-@keyframes leftToRight {
-    0% {
-        right: 120vw;
+    .noti-top-right {
+        top: 8%;
+        right: -50vw;
     }
 
-    
-    25%{
-        right: 75vw;
-    }
-
-
-    50% {
-        right: 75vw;
-    }
-
-    
-    75%{
-        right: 120vw;
-    }
-
-
-    100% {
+    .noti-center-left {
+        top: 50%;
         right: 130vw;
     }
+
+    .noti-center-right {
+        top: 50%;
+        right: -50vw;
+    }
+
+    .noti-bottom-left {
+        top: 83%;
+        right: 130vw;
+    }
+
+    .noti-bottom-right {
+        top: 83%;
+        right: -50vw;
+    }
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes rightToLeft {
+        0% {
+            right: -40vw;
+        }
+
+
+        25% {
+            right: 2vw;
+        }
+
+
+        50% {
+            right: 2vw;
+        }
+
+
+        75% {
+            right: -50vw;
+        }
+
+
+        100% {
+            right: -50vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes rightToLeft {
+        0% {
+            right: -40vw;
+        }
+
+
+        25% {
+            right: 2vw;
+        }
+
+
+        50% {
+            right: 2vw;
+        }
+
+
+        75% {
+            right: -50vw;
+        }
+
+
+        100% {
+            right: -50vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 50vw;
+        }
+
+
+        50% {
+            right: 50vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 50vw;
+        }
+
+
+        50% {
+            right: 50vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
 }
+
+@media only screen and (min-width : 500px) {
+    .notification {
+        font-family: "Assistant";
+        color: white;
+        padding: 1.3%;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 34%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+    }
+
+    .noti-top-left {
+        top: 10%;
+        right: 130vw;
+    }
+
+    .noti-top-right {
+        top: 10%;
+        right: -40vw;
+    }
+
+    .noti-center-left {
+        top: 50%;
+        right: 130vw;
+    }
+
+    .noti-center-right {
+        top: 50%;
+        right: -40vw;
+    }
+
+    .noti-bottom-left {
+        top: 70%;
+        right: 130vw;
+    }
+
+    .noti-bottom-right {
+        top: 70%;
+        right: -40vw;
+    }
+
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes rightToLeft {
+        0% {
+            right: -40vw;
+        }
+
+
+        25% {
+            right: 1vw;
+        }
+
+
+        50% {
+            right: 1vw;
+        }
+
+
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes rightToLeft {
+        0% {
+            right: -40vw;
+        }
+
+
+        25% {
+            right: 1vw;
+        }
+
+
+        50% {
+            right: 1vw;
+        }
+
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 62vw;
+        }
+
+
+        50% {
+            right: 62vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 62vw;
+        }
+
+
+        50% {
+            right: 62vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+}
+
+/* iPads 1024 enough*/
+@media only screen and (min-device-width : 760px) and (max-device-width : 1124px) {
+    .notification {
+        font-family: "Assistant";
+        color: white;
+        padding: 1.3%;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 36%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+    }
+
+    .noti-top-left {
+        top: 8%;
+        right: 130vw;
+    }
+
+    .noti-top-right {
+        top: 8%;
+        right: -40vw;
+    }
+
+    .noti-center-left {
+        top: 50%;
+        right: 130vw;
+    }
+
+    .noti-center-right {
+        top: 50%;
+        right: -40vw;
+    }
+
+    .noti-bottom-left {
+        top: 83%;
+        right: 130vw;
+    }
+
+    .noti-bottom-right {
+        top: 83%;
+        right: -40vw;
+    }
+
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes rightToLeft {
+        0% {
+            right: -40vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -40vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes rightToLeft {
+        0% {
+            right: -40vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -40vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 60vw;
+        }
+
+
+        50% {
+            right: 60vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 60vw;
+        }
+
+
+        50% {
+            right: 60vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+}
+
+/* Desktops and Laptops */
+@media only screen and (min-width : 1224px) {
+    .notification {
+        font-family: "Assistant";
+        color: white;
+        padding: 1.3%;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 26%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+    }
+
+    .noti-top-left {
+        top: 8%;
+        right: 130vw;
+    }
+
+    .noti-top-right {
+        top: 8%;
+        right: -40vw;
+    }
+
+    .noti-center-left {
+        top: 50%;
+        right: 130vw;
+    }
+
+    .noti-center-right {
+        top: 50%;
+        right: -40vw;
+    }
+
+    .noti-bottom-left {
+        top: 82%;
+        right: 130vw;
+    }
+
+    .noti-bottom-right {
+        top: 82%;
+        right: -40vw;
+    }
+
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 70vw;
+        }
+
+
+        50% {
+            right: 70vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 70vw;
+        }
+
+
+        50% {
+            right: 70vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+}
+
+/* Large Screens */
+@media only screen and (min-width : 1824px) {
+    .notification {
+        font-family: "Assistant";
+        color: white;
+        padding: 1.3%;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 30%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+    }
+
+    .noti-top-left {
+        top: 8%;
+        right: 130vw;
+    }
+
+    .noti-top-right {
+        top: 8%;
+        right: -40vw;
+    }
+
+    .noti-center-left {
+        top: 50%;
+        right: 130vw;
+    }
+
+    .noti-center-right {
+        top: 50%;
+        right: -40vw;
+    }
+
+    .noti-bottom-left {
+        top: 85%;
+        right: 110vw;
+    }
+
+    .noti-bottom-right {
+        top: 85%;
+        right: -40vw;
+    }
+
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 70vw;
+        }
+
+
+        50% {
+            right: 70vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 70vw;
+        }
+
+
+        50% {
+            right: 70vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+}
+
+
+
 
 /*animation key frames for left to right*/
 
 /*styles for position*/
+/*
 .noti-top-left {
     top: 15%;
     right: 130vw;
@@ -208,17 +867,8 @@ body {
 .noti-bottom-right {
     top: 80%;
     right: -40vw;
-/*
-    -webkit-animation: rightToLeft 4s ease-out;
-     Safari 4.0 - 8.0 
-    animation: rightToLeft 4s ease-out;
-*/
-/*
-    animation-name: rightToLeft;
-    animation-timing-function: ease-out;
-    animation-duration: 4s;
-*/
 }
+*/
 
 /*styles for position*/
 
