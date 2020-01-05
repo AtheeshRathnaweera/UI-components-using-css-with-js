@@ -1,23 +1,43 @@
-$(document).ready(function () {
-    console.log("ready started");
-});
+var type = "";
+var message = "";
+var bgColor = "";
+var fontColor = "";
+var position = "";
 
+var alertRunning = false;
+var validPositions = ["top-left", "top-right", "center-left", "center-right", "bottom-left", "bottom-right"];
 
-document.getElementById("bottomRightLaunch").onclick = function () {
-    notification("Bottom left notification.","darkblue","white","bottom-right");
-}
+var iconAlerData = [
+    {
+        type: "default",
+        iconBackgroundColor: "#006400",
+        iconClassArray: ["far", "fa-bell"],
+        messageBackgroundColor: "#008000"
+    },
+    {
+        type: "success",
+        iconBackgroundColor: "#008B8B",
+        iconClassArray: ["far", "fa-check-circle"],
+        messageBackgroundColor: "#20B2AA"
+    },
+    {
+        type: "danger",
+        iconBackgroundColor: "#DC381F",
+        iconClassArray: ["fa", "fa-exclamation-circle"],
+        messageBackgroundColor: "#FF0000"
+    },
+    {
+        type: "fail",
+        iconBackgroundColor: "#EAC117",
+        iconClassArray: ["far", "fa-times-circle"],
+        messageBackgroundColor: "#FDD017"
+    }
+]; //hold the data related to icon alerts
 
-document.getElementById("centerRightLaunch").onclick = function () {
-    notification("Center right notification.","darkblue","white","center-right");
-}
-
-document.getElementById("topRightLaunch").onclick = function(){
-     notification("Top right notification.","darkgreen","white","top-right");
-}
 
 function getStylesNameForPosition(recPosition) {
-    var validPositions = ["top-left", "top-right", "center-left", "center-right", "bottom-left", "bottom-right"];
 
+    //validate the received position and return the position styles name
     if (validPositions.includes(recPosition)) {
         console.log("valid position");
         return "noti-" + recPosition;
@@ -29,52 +49,143 @@ function getStylesNameForPosition(recPosition) {
 }
 
 function getAnimationDirection(positionStylesClassName) {
-    var type = positionStylesClassName.split("-")[2];
+    //get the animation style class name by splitting the positionStylesClassName
+    var type = positionStylesClassName.split("-")[2]; //get the third elem of the array
     var res = "rightToLeft";
 
     if (type == "left") {
         var res = "leftToRight";
     }
-    
+
     return res;
 }
 
-function notification(message, bgColor, fontColor, position) {
-    message = message || "No message set";
-    bgColor = bgColor || "#008C8C";
-    fontColor = fontColor || "#ffff";
-    position = position || "bottom-right";
+function timeOutForRunningAlert(timeInSeconds) {
+    //timeout function. Duration should be equal to notification s animate duration
+    setTimeout(function () {
+        alertRunning = false;
+    }, timeInSeconds * 1000);
+}
 
-    console.log("msg : " + message);
-    console.log("bgcolor : " + bgColor);
-    console.log("font color : " + fontColor);
-    console.log("position : " + position);
+function notification(type, message, position, bgColor, fontColor) {
+    //validate and set default values for the parameters if they are null
+    console.log("first : " + this.type);
+    this.type = type || "basic";
+    this.message = message || "No message set";
+    this.position = position || "bottom-right";
+    this.bgColor = bgColor || "#008C8C";
+    this.fontColor = fontColor || "#ffff";
 
-    var notificationHtml = '<div class="notification">This is a test notification.</div>';
+    console.log("msg : " + this.type);
+    console.log("msg : " + this.message);
+    console.log("bgcolor : " + this.bgColor);
+    console.log("font color : " + this.fontColor);
+    console.log("position : " + this.position);
 
-    var divNode = document.createElement("DIV"); // Create a <li> node
+    if (!alertRunning) {
+        //no alerts are running
+
+        if (this.type == "basic") {
+            basicNotification();
+        } else if (this.type == "icon-default" || this.type == "icon-success" || this.type == "icon-fail" || this.type == "icon-danger") {
+            iconNotification(this.type.split("-")[1]);
+        }
+
+    }
+}
+
+function addStylesAndAnimationsToTheOuterDiv(outerDivNode) {
+    var styleClassForPosition = getStylesNameForPosition(this.position);
+    outerDivNode.classList.add(styleClassForPosition);
+
+    //adding animation styles
+    var animationDirection = getAnimationDirection(styleClassForPosition);
+    outerDivNode.style.animation = animationDirection + " 4s ease-out";
+    outerDivNode.style.webkitAnimation = animationDirection + " 4s ease-out";
+}
+
+function basicNotification() {
+    console.log("third : " + type);
+
+    var divNode = document.createElement("DIV");
     divNode.classList.add("notification");
 
-    var styleClassForPosition = getStylesNameForPosition(position);
-    divNode.classList.add(styleClassForPosition);
+    addStylesAndAnimationsToTheOuterDiv(divNode);
 
-    divNode.style.backgroundColor = bgColor;
-    divNode.style.color = fontColor;
+    //add basic styles
+    divNode.style.backgroundColor = this.bgColor;
+    divNode.style.color = this.fontColor;
 
-    var animationDirection = getAnimationDirection(styleClassForPosition);
-    console.error(animationDirection);
+    // set the message
+    divNode.innerHTML = this.message;
 
-    divNode.style.animation = animationDirection+" 4s ease-out";
-    divNode.style.webkitAnimation = animationDirection+" 4s ease-out";
-
-    divNode.innerHTML = message; // Create a text node
+    //add created div to the body
     document.body.appendChild(divNode);
 
+    //set up timeout for avoid notifications overflow
+    alertRunning = true;
+    timeOutForRunningAlert(4);
 
-    //    
-    //    setTimeout(function () {
-    //        console.log("timr up");
-    //        divNode.style.right = "-50vw";
-    //        divNode.style.display = "none";
-    //    }, 2000);
+}
+
+function getRelevantDataObjectToIconAlert(iconAlertType) {
+
+    for (var i = 0; i < iconAlerData.length; i++) {
+        if (iconAlerData[i].type == iconAlertType) {
+            return iconAlerData[i];
+        }
+    }
+
+}
+
+function createTheIconNode(iconClassArray) {
+    var iconNode = document.createElement("I");
+    
+    for(var i=0; i<iconClassArray.length; i++){
+        iconNode.classList.add(iconClassArray[i]);
+    }
+    
+    return iconNode;
+
+}
+
+function iconNotification(iconAlertType) {
+    console.log("icon notification : " + this.type + " " + iconAlertType);
+    var dataObject = getRelevantDataObjectToIconAlert(iconAlertType);
+
+    //outer div
+    var divNode = document.createElement("DIV");
+    divNode.classList.add("notification-icon");
+
+    //inner div
+    var innerRow = document.createElement("DIV");
+    innerRow.classList.add("row");
+
+    //inner div children-------------------------------
+    var childDivOneNode = document.createElement("DIV");
+    childDivOneNode.classList.add("notification-icon-holder");
+    childDivOneNode.style.backgroundColor = dataObject.iconBackgroundColor;
+
+    childDivOneNode.appendChild(createTheIconNode(dataObject.iconClassArray));
+
+    var childDivTwoNode = document.createElement("DIV");
+    childDivTwoNode.classList.add("notification-icon-message");
+    childDivTwoNode.style.backgroundColor = dataObject.messageBackgroundColor;
+
+    childDivTwoNode.innerHTML = this.message;
+    //inner div children--------------------------------
+
+    //add children to inner div ("row")
+    innerRow.appendChild(childDivOneNode);
+    innerRow.appendChild(childDivTwoNode);
+    //add children to inner div ("row")
+
+    //add inner row div to outer div
+    divNode.appendChild(innerRow);
+    addStylesAndAnimationsToTheOuterDiv(divNode);
+    //add inner row div to outer div
+
+    //add created div to the body
+    document.body.appendChild(divNode);
+
 }

@@ -7,18 +7,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Notification</title>
+    <title>Alerts</title>
 
-    <!-- Bootstrap & Snippet plugin core CSS -->
+    <!-- Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap-->
+
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--    jquery-->
 
     <!-- Custom styles for this template -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="assets/styles.css" />
+    <!-- Custom styles for this template -->
 
+    <!--    font families-->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <!--    font families-->
+
+    <!--    font awesome icon sheet-->
+    <script src="https://kit.fontawesome.com/d7b942af46.js" crossorigin="anonymous"></script>
+    <!--    font awesome icon sheet-->
 
 </head>
 
@@ -31,16 +41,94 @@
             <div class="row buttonsHolder">
 
                 <button class="launchButton" id="bottomRightLaunch">Bottom-Right</button>
-                
+
                 <button class="launchButton" id="centerRightLaunch">Center-Right</button>
 
                 <button class="launchButton" id="topRightLaunch">Top-Right</button>
             </div>
-
         </div>
+        
+          <div class="section">
+            <div class="section-header">
+                Notification with icon
+            </div>
+            <div class="row buttonsHolder">
+                
+                <button class="launchButton" id="defaultNotiIconLaunch">Default</button>
+
+                <button class="launchButton" id="successNotiIconLaunch">Success</button>
+
+                <button class="launchButton" id="failNotiIconLaunch">Fail</button>
+
+                <button class="launchButton" id="dangerNotiIconLaunch">Danger</button>
+            </div>
+        </div>
+        
+<!--
+        <div class="notification-icon">
+            <div class="row">
+                <div class="notification-icon-holder" style="background-color: #DC381F;">
+                    <i class="fa fa-exclamation-circle"></i>
+                </div>
+
+                <div class="notification-icon-message" style="background-color: #FF0000;">
+                    This is a danger notification.
+                </div>
+            </div>
+        </div>
+-->
+
+<!--
+        <div class="notification-icon" style="margin-top: 140px;">
+            <div class="row">
+                <div class="notification-icon-holder"
+                     style="background-color: #008B8B;">
+                    <i class="far fa-check-circle"></i>
+                </div>
+
+                <div class="notification-icon-message" style="background-color: #20B2AA;">
+                    This is a success notification.
+                </div>
+            </div>
+        </div>
+-->
+
+        
+        
+<!--
+         <div class="notification-icon" style="margin-top: 240px;">
+            <div class="row">
+                <div class="notification-icon-holder" style="background-color: #EAC117;">
+                    <i class="far fa-times-circle"></i>
+                </div>
+
+                <div class="notification-icon-message" style="background-color: #FDD017;">
+                    This is a fail notification.
+                </div>
+            </div>
+        </div>
+-->
+        
+<!--
+        <div class="notification-icon" style="margin-top: 340px;">
+            <div class="row">
+                <div class="notification-icon-holder" style="background-color: #006400;">
+                    <i class="far fa-bell"></i>
+                </div>
+
+                <div class="notification-icon-message" style="background-color: #008000;">
+                    This is a default notification.
+                </div>
+            </div>
+        </div>
+-->
     </div>
 
+
+    
     <script src="assets/script.js"></script>
+<!--    <script src="assets/basic_noti.js"></script>-->
+    <script src="assets/demo.js"></script>
 </body>
 
 </html>
