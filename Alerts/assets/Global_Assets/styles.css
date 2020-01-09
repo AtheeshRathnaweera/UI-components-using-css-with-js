@@ -1,0 +1,55 @@
+/*main styles--------------------------------------------------------*/
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.content {
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+
+}
+
+.section {
+    height: 20%;
+    padding: 2%;
+}
+
+.section-header {
+    color: black;
+    font-family: "Montserrat";
+    font-size: 3vh;
+    border-bottom: 1px solid darkgray;
+}
+
+/*main styles--------------------------------------------------------*/
+
+
+
+/*button styles------------------------------------------------------*/
+.buttonsHolder {
+    padding-top: 2%;
+}
+
+.launchButton {
+    background-color: transparent;
+    padding: 0.5% 3% 0.5% 3%;
+    color: gray;
+    cursor: pointer;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    border: 1.5px solid darkgray;
+    /*    background-image: linear-gradient(to right, darkblue, blue);*/
+}
+
+.launchButton:hover {
+    background-color: whitesmoke;
+}
+
+/*button styles------------------------------------------------------*/

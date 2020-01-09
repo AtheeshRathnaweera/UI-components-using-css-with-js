@@ -1,0 +1,961 @@
+/*notification styles------------------------------------------------*/
+
+
+
+/*smart phone screens*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 500px) {
+
+    /*    notification styles*/
+    .notification-icon {
+        font-family: "Assistant";
+        color: white;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 44%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+
+    }
+
+    .notification-icon-holder {
+        width: 22%;
+        -webkit-text-align: center;
+        color: white;
+        font-size: 3.5vh;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        justify-content: center;
+        padding: 4%;
+    }
+
+    .notification-icon-message {
+        width: 78%;
+        color: white;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        padding-left: 3%;
+    }
+
+    /*    notification styles*/
+
+    /*    position styles*/
+    .noti-icon-top-left {
+        top: 8%;
+        right: 130vw;
+    }
+
+    .noti-icon-top-right {
+        top: 8%;
+        right: -60vw;
+    }
+
+    .noti-icon-center-left {
+        top: 48%;
+        right: 130vw;
+    }
+
+    .noti-icon-center-right {
+        top: 48%;
+        right: -60vw;
+    }
+
+    .noti-icon-bottom-left {
+        top: 84%;
+        right: 130vw;
+    }
+
+    .noti-icon-bottom-right {
+        top: 84%;
+        right: -60vw;
+    }
+
+    /*     position styles*/
+
+    /*    animation styles*/
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes icon-rightToLeft {
+        0% {
+            right: -50vw;
+        }
+
+
+        25% {
+            right: 6vw;
+        }
+
+
+        50% {
+            right: 6vw;
+        }
+
+
+        75% {
+            right: -50vw;
+        }
+
+
+        100% {
+            right: -60vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-rightToLeft {
+        0% {
+            right: -50vw;
+        }
+
+
+        25% {
+            right: 6vw;
+        }
+
+
+        50% {
+            right: 6vw;
+        }
+
+
+        75% {
+            right: -50vw;
+        }
+
+
+        100% {
+            right: -60vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 46vw;
+        }
+
+
+        50% {
+            right: 46vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 46vw;
+        }
+
+
+        50% {
+            right: 46vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /*     animation styles*/
+}
+
+/*screens greater the 500px width*/
+@media only screen and (min-width : 500px) {
+
+    /*    notification styles*/
+    .notification-icon {
+        font-family: "Assistant";
+        color: white;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 42%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+
+    }
+
+    .notification-icon-holder {
+        width: 22%;
+        -webkit-text-align: center;
+        color: white;
+        font-size: 3.5vh;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        justify-content: center;
+        padding: 4%;
+    }
+
+    .notification-icon-message {
+        width: 78%;
+        color: white;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        padding-left: 3%;
+    }
+
+    /*    notification styles*/
+
+    /*     position styles*/
+    .noti-icon-top-left {
+        top: 10%;
+        right: 130vw;
+    }
+
+    .noti-icon-top-right {
+        top: 10%;
+        right: -60vw;
+    }
+
+    .noti-icon-center-left {
+        top: 50%;
+        right: 130vw;
+    }
+
+    .noti-icon-center-right {
+        top: 50%;
+        right: -60vw;
+    }
+
+    .noti-icon-bottom-left {
+        top: 83%;
+        right: 130vw;
+    }
+
+    .noti-icon-bottom-right {
+        top: 83%;
+        right: -60vw;
+    }
+
+    /*     position styles*/
+
+    /*     animation styles*/
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes icon-rightToLeft {
+        0% {
+            right: -50vw;
+        }
+
+
+        25% {
+            right: 2vw;
+        }
+
+
+        50% {
+            right: 2vw;
+        }
+
+
+
+
+        100% {
+            right: -60vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-rightToLeft {
+        0% {
+            right: -50vw;
+        }
+
+        25% {
+            right: 2vw;
+        }
+
+        50% {
+            right: 2vw;
+        }
+
+        100% {
+            right: -60vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 50vw;
+        }
+
+
+        50% {
+            right: 50vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 50vw;
+        }
+
+
+        50% {
+            right: 50vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /*     animation styles*/
+}
+
+/* iPads , 1024px limit is enough*/
+@media only screen and (min-device-width : 760px) and (max-device-width : 1124px) {
+
+    /*    notification styles*/
+    .notification-icon {
+        font-family: "Assistant";
+        color: white;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 33%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+
+    }
+
+    .notification-icon-holder {
+        width: 19%;
+        -webkit-text-align: center;
+        color: white;
+        font-size: 2.3vh;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        justify-content: center;
+        padding: 3%;
+    }
+
+    .notification-icon-message {
+        width: 81%;
+        color: white;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        padding-left: 3%;
+        
+    }
+
+    /*    notification styles*/
+
+    /*     position styles*/
+    .noti-icon-top-left {
+        top: 8%;
+        right: 130vw;
+    }
+
+    .noti-icon-top-right {
+        top: 8%;
+        right: -60vw;
+    }
+
+    .noti-icon-center-left {
+        top: 48%;
+        right: 130vw;
+    }
+
+    .noti-icon-center-right {
+        top: 48%;
+        right: -60vw;
+    }
+
+    .noti-icon-bottom-left {
+        top: 86%;
+        right: 130vw;
+    }
+
+    .noti-icon-bottom-right {
+        top: 86%;
+        right: -60vw;
+    }
+
+    /*     position styles*/
+
+    /*     animation styles*/
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes icon-rightToLeft {
+        0% {
+            right: -50vw;
+        }
+
+
+        25% {
+            right: 3vw;
+        }
+
+
+        50% {
+            right: 3vw;
+        }
+
+
+        75% {
+            right: -50vw;
+        }
+
+
+        100% {
+            right: -60vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-rightToLeft {
+        0% {
+            right: -50vw;
+        }
+
+
+        25% {
+            right: 3vw;
+        }
+
+
+        50% {
+            right: 3vw;
+        }
+
+
+        75% {
+            right: -50vw;
+        }
+
+
+        100% {
+            right: -60vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 61vw;
+        }
+
+
+        50% {
+            right: 61vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 61vw;
+        }
+
+
+        50% {
+            right: 61vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /*     animation styles*/
+}
+
+/* Desktops and Laptops */
+@media only screen and (min-width : 1224px) {
+
+    /*    notification styles*/
+    .notification-icon {
+        font-family: "Assistant";
+        color: white;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width:22%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+
+    }
+
+    .notification-icon-holder {
+        width: 15%;
+        -webkit-text-align: center;
+        color: white;
+        font-size: 2.4vh;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        justify-content: center;
+        padding: 4% 2% 4% 2%;
+    }
+
+    .notification-icon-message {
+        width: 85%;
+        color: white;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        padding-left: 3%;
+    }
+
+    /*    notification styles*/
+
+    /*     position styles*/
+    .noti-icon-top-left {
+        top: 8%;
+        right: 130vw;
+    }
+
+    .noti-icon-top-right {
+        top: 8%;
+        right: -40vw;
+    }
+
+    .noti-icon-center-left {
+        top: 44%;
+        right: 130vw;
+    }
+
+    .noti-icon-center-right {
+        top: 44%;
+        right: -40vw;
+    }
+
+    .noti-icon-bottom-left {
+        top: 82%;
+        right: 130vw;
+    }
+
+    .noti-icon-bottom-right {
+        top: 82%;
+        right: -40vw;
+    }
+
+    /*     position styles*/
+
+    /*     animation styles*/
+
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes icon-rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 73vw;
+        }
+
+
+        50% {
+            right: 73vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 73vw;
+        }
+
+
+        50% {
+            right: 73vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /*     animation styles*/
+}
+
+/* Large Screens */
+@media only screen and (min-width : 1824px) {
+
+    /*    notification styles*/
+    .notification-icon {
+        font-family: "Assistant";
+        color: white;
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+        width: 20%;
+        position: absolute;
+        transition: right 1s ease-out;
+        margin: 2vw;
+        z-index: 7;
+
+    }
+
+
+    .notification-icon-holder {
+        width: 13%;
+        -webkit-text-align: center;
+        color: white;
+        font-size: 2.2vh;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        justify-content: center;
+        padding: 4%;
+    }
+
+    .notification-icon-message {
+        width: 87%;
+        color: white;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-align-content: center;
+        align-content: center;
+        padding-left: 3%;
+    }
+
+    /*    notification styles*/
+
+    /*     position styles*/
+    .noti-icon-top-left {
+        top: 8%;
+        right: 130vw;
+    }
+
+    .noti-icon-top-right {
+        top: 8%;
+        right: -50vw;
+    }
+
+    .noti-icon-center-left {
+        top: 45%;
+        right: 130vw;
+    }
+
+    .noti-icon-center-right {
+        top: 45%;
+        right: -50vw;
+    }
+
+    .noti-icon-bottom-left {
+        top: 85%;
+        right: 110vw;
+    }
+
+    .noti-icon-bottom-right {
+        top: 85%;
+        right: -50vw;
+    }
+
+    /*     position styles*/
+
+    /*     animation styles*/
+    /*animation key frames for right to left*/
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes icon-rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-rightToLeft {
+        0% {
+            right: -30vw;
+        }
+
+
+        25% {
+            right: 0vw;
+        }
+
+
+        50% {
+            right: 0vw;
+        }
+
+
+        75% {
+            right: -30vw;
+        }
+
+
+        100% {
+            right: -40vw;
+        }
+    }
+
+    /*animation key frames for right to left*/
+
+    /*animation key frames for left to right*/
+    @-webkit-keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+
+        25% {
+            right: 75vw;
+        }
+
+
+        50% {
+            right: 75vw;
+        }
+
+
+        75% {
+            right: 100vw;
+        }
+
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes icon-leftToRight {
+        0% {
+            right: 100vw;
+        }
+
+        25% {
+            right: 75vw;
+        }
+
+        50% {
+            right: 75vw;
+        }
+
+        75% {
+            right: 100vw;
+        }
+
+        100% {
+            right: 130vw;
+        }
+    }
+
+    /*     animation styles*/
+}
+
+/*notification styles------------------------------------------------*/
