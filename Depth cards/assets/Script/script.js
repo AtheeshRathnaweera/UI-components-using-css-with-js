@@ -11,7 +11,6 @@ $(document).ready(function () {
         depthCardsList[i].classList.add("card");//add "card" class to depthCards
         var backgroundImageUrl = depthCardsList[i].getAttribute("depth-background-image");
         depthCardsList[i].style.backgroundImage = "url("+backgroundImageUrl+")";
-        console.log("url : "+backgroundImageUrl);
     }
 });
 
