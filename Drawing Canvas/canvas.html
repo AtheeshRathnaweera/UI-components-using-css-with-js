@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Drawing Canvas</title>
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap-->
+
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--    jquery-->
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="assets/Styles/styles.css" />
+
+    <!-- Custom styles for this template -->
+
+    <!--    font families-->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <!--    font families-->
+
+    <!--    font awesome icon sheet-->
+    <script src="https://kit.fontawesome.com/d7b942af46.js" crossorigin="anonymous"></script>
+    <!--    font awesome icon sheet-->
+
+
+
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="colorPicker">
+            Pen Color : <input class="jscolor" value="ab2567" onchange="changeColor(this.jscolor)">
+        </div>
+
+        <div class="toolBox row">
+            <button class="toolButton" style="background-color: red;" onclick="cleanCanvas()">
+                Clean Canvas
+            </button>
+
+            <button class="toolButton" style="background-color: orange;" onclick="restoreCanvas()">
+                Restore
+            </button>
+        </div>
+
+        <canvas id="myCanvas">
+        </canvas>
+
+
+
+    </div>
+
+
+    <script type="text/javascript" src="assets/Script/script.js"></script>
+    <script type="text/javascript" src="assets/Script/jscolor.js"></script>
+    <!--    <script src="assets/basic_noti.js"></script>-->
+
+
+</body>
+
+</html>
