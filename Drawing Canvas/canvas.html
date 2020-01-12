@@ -9,13 +9,15 @@
 
     <title>Drawing Canvas</title>
 
-    <!-- Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <!-- Bootstrap-->
-
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--    jquery-->
+
+    <!-- Bootstrap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Bootstrap-->
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="assets/Styles/styles.css" />
@@ -39,7 +41,7 @@
     <div class="content">
 
         <div class="colorPicker">
-            Pen Color : <input class="jscolor" value="ab2567" onchange="changeColor(this.jscolor)">
+            Pen Color : <input class="jscolor" value="000000" onchange="changeColor(this.jscolor)">
         </div>
 
         <div class="toolBox row">
@@ -50,10 +52,45 @@
             <button class="toolButton" style="background-color: orange;" onclick="restoreCanvas()">
                 Restore
             </button>
+
+            <button class="toolButton" style="background-color: darkblue;" onclick="printCanvas()">
+                Print
+            </button>
         </div>
 
         <canvas id="myCanvas">
         </canvas>
+
+        <!-- The Modal -->
+        <div class="modal" id="printedResultsDisplayModal">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Print Result</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body" id="printImageHolder">
+                       <img id="canvasimg" style="width: 100%;"/>
+                        <hr>
+                        Image name : <input type="text" id="imageName" value="filename.jpg">
+                    </div>
+                    
+                    <a id="imageDownloadLink" href="" download="filename.jpg" class="btn btn-primary" hidden></a>
+                
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" onclick="downloadPrintedResult()">Download</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
 
 

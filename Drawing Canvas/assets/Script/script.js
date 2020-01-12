@@ -9,8 +9,9 @@ var pickedColor = "#181726";
 $(document).ready(function () {
 
     setCanvasDimensions();
+    pickedColor = "#"+document.getElementsByClassName("jscolor")[0].value;
 
-    console.log("ready started. " + canvasTopOffSet + " " + canvasLeftOffSet);
+    console.log("ready started. " + canvasTopOffSet + " " + canvasLeftOffSet+" "+pickedColor);
 });
 
 window.onresize = function () {
@@ -62,17 +63,41 @@ function drawOnCanvas(xCordinates, yCordniates) {
 
 function cleanCanvas() {
     context.save();
-    context.clearRect(0, 0,context.canvas.width, context.canvas.height);
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
     context.beginPath();
-    
+
 }
 
-function restoreCanvas(){
+function restoreCanvas() {
     context.restore();
 }
 
-function changeColor(hexCode){
-    console.log("this is the picked color: "+hexCode);
-    pickedColor = "#"+hexCode;
+function changeColor(hexCode) {
+    console.log("this is the picked color: " + hexCode);
+    pickedColor = "#" + hexCode;
     context.beginPath();
+}
+
+function printCanvas() {
+    $("#canvasimg").attr("src", $("#myCanvas").get(0).toDataURL("img/jpg"));
+
+    $("#printedResultsDisplayModal").modal();
+
+
+}
+
+function downloadPrintedResult() {
+    var fileName = document.getElementById("imageName").value;
+
+    if (fileName == "") {
+        fileName = "fileName.jpg";
+    }
+
+    var url = document.getElementById("canvasimg").src.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
+    
+    var downloadLink = document.getElementById("imageDownloadLink");
+    
+    downloadLink.href = url;
+    downloadLink.download = fileName;
+    downloadLink.click();
 }
