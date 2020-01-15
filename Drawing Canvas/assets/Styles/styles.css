@@ -28,6 +28,7 @@ body {
     top: 0;
 }
 
+/*picker styles*/
 .colorPicker{
     width: 100%;
     z-index: 4;
@@ -37,6 +38,11 @@ body {
     padding: 1%;
     margin: 1%;
 }
+
+.jscolor{
+    
+}
+/*picker styles*/
 
 .toolBox {
     width: 100%;

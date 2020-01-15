@@ -40,17 +40,33 @@
 <body>
     <div class="content">
 
-        <div class="colorPicker">
-            Pen Color : <input class="jscolor" value="000000" onchange="changeColor(this.jscolor)">
+        <div class="colorPicker row col-md-12">
+            <div class="pickerHolder col-md-3">
+                Pen Color : <input class="jscolor" value="000000" id="penColor" onchange="changeColor(this.jscolor)">
+            </div>
+            
+            <div class="col-md-3">
+                Board Color : <input class="jscolor"id="boardColor" value="ffffff" onchange="changeBoardColor(this.jscolor)">
+            </div>
         </div>
 
+
+
         <div class="toolBox row">
+            <button class="toolButton" style="background-color: darkgreen;" onclick="undoDrawing()">
+                <span><i class="fas fa-undo"></i></span> Undo
+            </button>
+            
+            <button class="toolButton" style="background-color: darkgreen;" onclick="redoDrawing()">
+                <span><i class="fas fa-redo"></i></span> Redo
+            </button>
+            
             <button class="toolButton" style="background-color: red;" onclick="cleanCanvas()">
                 Clean Canvas
             </button>
 
             <button class="toolButton" style="background-color: orange;" onclick="restoreCanvas()">
-                Restore
+                Restore Canvas
             </button>
 
             <button class="toolButton" style="background-color: darkblue;" onclick="printCanvas()">
@@ -74,13 +90,13 @@
 
                     <!-- Modal body -->
                     <div class="modal-body" id="printImageHolder">
-                       <img id="canvasimg" style="width: 100%;"/>
+                        <img id="canvasimg" style="width: 100%;" />
                         <hr>
                         Image name : <input type="text" id="imageName" value="filename.jpg">
                     </div>
-                    
+
                     <a id="imageDownloadLink" href="" download="filename.jpg" class="btn btn-primary" hidden></a>
-                
+
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
