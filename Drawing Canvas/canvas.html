@@ -33,6 +33,11 @@
     <script src="https://kit.fontawesome.com/d7b942af46.js" crossorigin="anonymous"></script>
     <!--    font awesome icon sheet-->
 
+    <!--    cropper-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.css" rel='stylesheet'>
+
+    <!--cropper-->
+
 
 
 </head>
@@ -44,10 +49,22 @@
             <div class="pickerHolder col-md-3">
                 Pen Color : <input class="jscolor" value="000000" id="penColor" onchange="changeColor(this.jscolor)">
             </div>
-            
-            <div class="col-md-3">
-                Board Color : <input class="jscolor"id="boardColor" value="ffffff" onchange="changeBoardColor(this.jscolor)">
+
+            <div class="col-md-3 ">
+                <div class="row">
+                    <div>
+                        Board Color : <input class="jscolor" id="boardColor" value="ffffff" onchange="changeBoardColor('#'+this.jscolor)">
+                    </div>
+
+                    <div  class="boardColorAccessHolder">
+                        <input type="checkbox" id="boardColorAccess" class="form-check-input"  onchange="boardColorAccessibleChange()">
+                    </div>
+
+
+                </div>
             </div>
+
+
         </div>
 
 
@@ -56,11 +73,11 @@
             <button class="toolButton" style="background-color: darkgreen;" onclick="undoDrawing()">
                 <span><i class="fas fa-undo"></i></span> Undo
             </button>
-            
+
             <button class="toolButton" style="background-color: darkgreen;" onclick="redoDrawing()">
                 <span><i class="fas fa-redo"></i></span> Redo
             </button>
-            
+
             <button class="toolButton" style="background-color: red;" onclick="cleanCanvas()">
                 Clean Canvas
             </button>
@@ -90,7 +107,9 @@
 
                     <!-- Modal body -->
                     <div class="modal-body" id="printImageHolder">
-                        <img id="canvasimg" style="width: 100%;" />
+                        <div>
+                            <img id="canvasimg" style="display: block; max-width: 100%;" />
+                        </div>
                         <hr>
                         Image name : <input type="text" id="imageName" value="filename.jpg">
                     </div>
@@ -100,7 +119,7 @@
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" onclick="downloadPrintedResult()">Download</button>
+                        <button type="button" class="btn btn-primary" onclick="downloadPrintedResult()">Download</button>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
 
@@ -115,7 +134,7 @@
 
     <script type="text/javascript" src="assets/Script/script.js"></script>
     <script type="text/javascript" src="assets/Script/jscolor.js"></script>
-    <!--    <script src="assets/basic_noti.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.js"></script>
 
 
 </body>

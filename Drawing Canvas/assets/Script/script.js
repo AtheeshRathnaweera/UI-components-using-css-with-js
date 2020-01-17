@@ -12,8 +12,19 @@ var currentStroke = null; //hold the currently drawing stroke data -->{boardColo
 var removedStrokeHistory = []; //use for undo and redo
 
 var canvasCleaned = false;
+var canBoardColorChange = true;
+
+var printImage;
+var colorChangeAccessCheckBox;
+var croppingCanvasData;
+var cropper = null;
 
 $(document).ready(function () {
+
+    printImage = document.getElementById('canvasimg');
+
+    colorChangeAccessCheckBox = document.getElementById("boardColorAccess");
+    colorChangeAccessCheckBox.checked = true;
 
     setCanvasDimensions();
     pickedColor = "#" + document.getElementById("penColor").value;
@@ -29,6 +40,7 @@ window.onresize = function () {
     setCanvasDimensions();
 
     if (!cleanCanvas) {
+        drawTheDrawingBoard(0, 0, myCanvas.width, myCanvas.height, boardColor);
         printHistory();
     }
 
@@ -79,9 +91,6 @@ myCanvas.onmousemove = function (e) {
 }
 
 function printHistory() {
-    console.log("history size : " + strokeHistoryData.length);
-
-    drawTheDrawingBoard(0, 0, myCanvas.width, myCanvas.height, boardColor);
 
     for (var i = 0; i < strokeHistoryData.length; i++) {
         setContextToStartNewStroke(strokeHistoryData[i].startX, strokeHistoryData[i].startY);
@@ -92,8 +101,6 @@ function printHistory() {
         for (var c = 0; c < strokeCords.length; c++) {
             drawOnCanvas(strokeCords[c].x, strokeCords[c].y, strokeColor);
         }
-
-        console.log(strokeHistoryData[i].startX + " " + strokeHistoryData[i].startY + " " + strokeHistoryData[i].cords);
     }
 
 }
@@ -131,6 +138,7 @@ function undoDrawing() {
 
     if (!canvasCleaned && strokeHistoryData.length > 0) {
         removedStrokeHistory.push(strokeHistoryData.pop());
+        drawTheDrawingBoard(0, 0, myCanvas.width, myCanvas.height, boardColor);
         printHistory();
     }
 
@@ -140,6 +148,7 @@ function redoDrawing() {
 
     if (!canvasCleaned && removedStrokeHistory.length > 0) {
         strokeHistoryData.push(removedStrokeHistory.pop());
+        drawTheDrawingBoard(0, 0, myCanvas.width, myCanvas.height, boardColor);
         printHistory();
     }
 
@@ -154,6 +163,7 @@ function cleanCanvas() {
 }
 
 function restoreCanvas() {
+    drawTheDrawingBoard(0, 0, myCanvas.width, myCanvas.height, boardColor);
     printHistory();
     canvasCleaned = false;
 
@@ -163,6 +173,17 @@ function printCanvas() {
     $("#canvasimg").attr("src", $("#myCanvas").get(0).toDataURL("img/jpg"));
 
     $("#printedResultsDisplayModal").modal();
+
+    if (cropper != null) {
+        //destroy exist cropper if exists
+        cropper.destroy();
+        cropper = null;
+    }
+
+    cropper = new Cropper(printImage, {
+        aspectRatio: 1
+    });
+
 }
 //tool actions
 
@@ -173,13 +194,28 @@ function changeColor(hexCode) {
     context.beginPath();
 }
 
+function boardColorAccessibleChange() {
+
+    if (colorChangeAccessCheckBox.checked) {
+        canBoardColorChange = true;
+        changeBoardColor(boardColor);
+        document.getElementById("boardColor").value = boardColor.replace("#","");
+    } else {
+        canBoardColorChange = false;
+        document.getElementById("boardColor").value = "transparent";
+        cleanCanvas();
+        printHistory();
+    }
+}
+
 function changeBoardColor(hexCode) {
     //change the board color
-    boardColor = "#" + hexCode;
+   
+    boardColor = hexCode;
 
-    if (printCanvas) {
+    if (canBoardColorChange) {
+        //change the boards color if allowed
         drawTheDrawingBoard(0, 0, myCanvas.width, myCanvas.height, boardColor);
-    } else {
         printHistory();
     }
 
@@ -196,12 +232,23 @@ function downloadPrintedResult() {
         fileName = "fileName.jpg";
     }
 
-    var url = document.getElementById("canvasimg").src.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
+    var url = getTheCroppedImageData().replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
 
     var downloadLink = document.getElementById("imageDownloadLink");
 
     downloadLink.href = url;
     downloadLink.download = fileName;
     downloadLink.click();
+}
+
+function getTheCroppedImageData() {
+    if (cropper) {
+        //get cropping canvas data if cropper exists
+        croppingCanvasData = cropper.getCroppedCanvas({
+            width: 260,
+            height: 260,
+        });
+        return croppingCanvasData.toDataURL();
+    }
 }
 //download button in print modal ---> download the creeated image
